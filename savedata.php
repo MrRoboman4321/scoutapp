@@ -36,7 +36,10 @@ $json = json_decode($data);
 
 
     $curQuery = pg_query("INSERT INTO scouting($tablet, $team, $startingposition, $autoshort, $automedium, $autolarge, $autocenter, $kickstand, $teleshort, $telemedium, $telelarge, $endsmall, $endmedium, $endlarge, $endcenter)");
+	
+	$data = pg_query("select * from scouting;");
 
 
     echo("<h1>Success pushing to database.</h1>");
+	echo($data);
 ?>
