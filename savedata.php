@@ -26,19 +26,20 @@
 
     $db = pg_connect('host = postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT user = adminabiaund password = aQQk148VkULG dbname = php');
     
+    if(!$db) die("Failed to connect to the DB!"); //if we don't have a DB conn, die
 
-    if($db->connect_errno > 0){
-        die('Unable to connect to database [' . $db->connect_error . ']');
-    }
+
     $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, kickstand BOOL, teleballs INTEGER, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER)");
 
-$json = json_decode($data);
-
+    if(!$curQuery) die("Table check/create failed!"); //if query failed, die
 
     $curQuery = pg_query("INSERT INTO scouting($tablet, $team, $startingposition, $autoshort, $automedium, $autolarge, $autocenter, $kickstand, $teleshort, $telemedium, $telelarge, $endsmall, $endmedium, $endlarge, $endcenter)");
 	
+    if(!$curQuery) die("Data insert failed!"); //if query failed, die
+
 	$data = pg_query("select * from scouting;");
 
+    if(!$data) die("Data selection failed!"); //if query failed, die
 
     echo("<h1>Success pushing to database.</h1>");
 	echo($data);
