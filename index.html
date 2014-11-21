@@ -54,25 +54,33 @@ function changePage(id) {
 
 function addToScore(type) {
     eval("data." + type + " += 1");
+	console.log(type);
 }
 function changeBool(type) {
     eval("data." + type + " = !data." + type);
+	console.log(type);
 }
 function changeText(type, newVal) {
     eval("data." + type + " = " + newVal);
+	console.log(type);
+	console.log(newVal);
 }
 function setNum(type, val) {
     eval("data." + type + " = " + val);
+	console.log(type);
+	console.log(val);
 }
 function setAutoPark() {
     var e = document.getElementById('parkpos');
 	data.startingposition = e.options[e.selectedindex].value;
+	console.log(data.startingposition);
 }
 function saveData() {
     $.post("savedata.php", data, function(data) { console.log(data); });
 }
 function disable(id) {
     document.getElementById(id).disabled = 'disabled';
+	console.log(id);
 }
 </script>
 
@@ -188,6 +196,18 @@ function disable(id) {
 --><input type="button" value="Medium" onclick="changePage('end');addToScore('endmedium');" style="Width:472px; height:251px; float:right; font-size:20px">
 <input type="button" value="Large" onclick="changePage('end');addToScore('endlarge');" style="Width:472px; height:251px; float:left; font-size:20px"><!--
 --><input type="button" value="Center" onclick="changePage('end');addToScore('endcenter');" style="Width:472px; height:251px; float:right; font-size:20px">
+</div>
+
+<div id="moveAuto" style="display:none">
+<input type="button" value="Small" onclick="changePage('auto');addToScore('automoved');" style="Width:472px; height:251px; float:left; font-size:20px"><!--
+--><input type="button" value="Medium" onclick="changePage('auto');addToScore('automoved');" style="Width:472px; height:251px; float:right; font-size:20px">
+<input type="button" value="Large" onclick="changePage('auto');addToScore('automoved');" style="Width:472px; height:251px; float:left; font-size:20px">
+</div>
+
+<div id="moveEnd" style="display:none">
+<input type="button" value="Small" onclick="changePage('end');addToScore('endmoved');" style="Width:472px; height:251px; float:left; font-size:20px"><!--
+--><input type="button" value="Medium" onclick="changePage('end');addToScore('endmoved');" style="Width:472px; height:251px; float:right; font-size:20px">
+<input type="button" value="Large" onclick="changePage('end');addToScore('endmoved');" style="Width:472px; height:251px; float:left; font-size:20px">
 </div>
 
 <div id="extraAuto" style="display:none">
