@@ -19,6 +19,12 @@ li {
         display:inline-block;
         margin-right:10px;
 }
+input[type=checkbox] {
+        transform: scale(2);
+}
+input[type=radio] {
+        transform: scale(2);
+}
 
 </style>
 <script>
@@ -137,7 +143,7 @@ function saveData() {
 <input type="radio" name="playStyle" id="playStyle" value="Defensive">Defensive
 </form></li>
 </ul>
-<input type="button" value="Back (FIX TO ANY PAGE)" onclick="changePage('auto');" style="Width:500px; height:500px;">
+<input type="button" value="Back" onclick="changePage('auto');" style="Width:250px; height:250px;">
 </div>
 
 <div id="extraTele" style="display:none">
@@ -155,7 +161,7 @@ function saveData() {
 <input type="radio" name="playStyle" id="playStyle" value="Defensive">Defensive
 </form></li>
 </ul>
-<input type="button" value="Back (FIX TO ANY PAGE)" onclick="changePage('tele');" style="Width:500px; height:500px;">
+<input type="button" value="Back" onclick="changePage('tele');" style="Width:250px; height:250px;">
 </div>
 
 <div id="extraEnd" style="display:none">
@@ -173,7 +179,7 @@ function saveData() {
 <input type="radio" name="playStyle" id="playStyle" value="Defensive">Defensive
 </form></li>
 </ul><br><br>
-<input type="button" value="Back" onclick="changePage('end');" style="Width:500px; height:500px;">
+<input type="button" value="Back" onclick="changePage('end');" style="Width:250px; height:250px;">
 </div>
 
 
