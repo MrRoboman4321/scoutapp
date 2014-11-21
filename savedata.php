@@ -29,7 +29,7 @@
     if(!$db) die("Failed to connect to the DB!"); //if we don't have a DB conn, die
 
 
-    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, kickstand BOOL, teleballs INTEGER, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER)");
+    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, kickstand BOOL, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER)");
 
     if(!$curQuery) die("Table check/create failed!"); //if query failed, die
 
