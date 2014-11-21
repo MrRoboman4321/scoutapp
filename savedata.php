@@ -24,7 +24,7 @@
     $endcenter = $_POST["endcenter"];
 	    //$endparked = $_POST["endparked"];
 
-    $db = pg_connect('host=frc.nelsonnwalaska.com port=5432 user=postgres password=FrcAdmin444! dbname=scouting');
+    $db = pg_connect('host=frc.nelsonnwalaska.com port=5432 user=postgres password=FrcAviation444! dbname=scouting');
     
     if(!$db) die("Failed to connect to the DB!"); //if we don't have a DB conn, die
 
