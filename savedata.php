@@ -1,7 +1,7 @@
 <?php
 
 
-    $tablet = $_POST["tablet"];
+    $match = $_POST["match"];
         //$match= $_POST["match"];
     $team = $_POST["team"];
         //$deadbot = $_POST["deadbot"];
@@ -29,11 +29,11 @@
     if(!$db) die("Failed to connect to the DB!"); //if we don't have a DB conn, die
 
 
-    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, kickstand BOOL, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER)");
+    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(match INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, kickstand BOOL, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER)");
 
     if(!$curQuery) die("Table check/create failed!"); //if query failed, die
 
-    $curQuery = pg_query("INSERT INTO scouting (tablet, team, startingposition, autoshort, automedium, autolarge, autocenter, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter) VALUES (${tablet}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter})");
+    $curQuery = pg_query("INSERT INTO scouting (match, team, startingposition, autoshort, automedium, autolarge, autocenter, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter) VALUES (${match}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter})");
 	
     if(!$curQuery) die("Data insert failed!"); //if query failed, die
 

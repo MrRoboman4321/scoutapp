@@ -27,7 +27,7 @@ input[type=radio] {
 </style>
 <script>
 data = {};
-data.tablet = 0;
+data.match = 0;
 data.team = 0;
 data.startingposition = "";
 data.autoshort = 0;
@@ -72,7 +72,7 @@ function setNum(type, val) {
 }
 function setAutoPark() {
     var e = document.getElementById('parkpos');
-	data.startingposition = e.options[e.selectedindex].value;
+	data.startingposition = e.options[e.selectedIndex].value;
 	console.log(data.startingposition);
 }
 function saveData() {
@@ -81,6 +81,11 @@ function saveData() {
 function disable(id) {
     document.getElementById(id).disabled = 'disabled';
 	console.log(id);
+}
+function setMatchTeamNo(matchId, teamId) {
+    var e = document.getElementById(matchId);
+    data.match = e.options[e.selectedIndex].value;
+    data.team = document.getElementById(teamId).value();
 }
 </script>
 
@@ -150,8 +155,7 @@ function disable(id) {
 <option>59</option>
 <option>60</option></select>
   <li>Starting Position<br><select id="parkpos"><option>Parking Zone</option><option>Ramp</option></li>
-  <li><input type="button" value="Start Game" onclick="changePage('auto');setNum('team', document.getElementById('teamno').value());setNum('tablet', 
-  document.getElementById('tabletno'));setAutoPark();"></li>
+  <li><input type="button" value="Start Game" onclick="changePage('auto');setTabTeamNo('matchno', 'teamno');setAutoPark();"></li>
 </ul>
 </div>
 
