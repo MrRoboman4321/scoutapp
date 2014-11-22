@@ -90,7 +90,13 @@ function setAutoPark() {
 function saveData() {
     console.log(data.automoved);
 	console.log(data);
-    $.post("savedata.php", data, function(data) { console.log("Swag done"); });
+    //$.post("savedata.php", data, function(data) { console.log("Swag done."); });
+	$.ajax({
+	    type: "POST",
+		url: 'savedata.php',
+		data: data,
+		success: function() { console.log("Success!"); },
+		});
 }
 function disable(id) {
     document.getElementById(id).setAttribute('disabled', 'disabled');
