@@ -45,4 +45,3 @@
 
     echo("<h1>Success pushing to database.</h1>");
 	echo($data);
-?>
