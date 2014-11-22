@@ -31,11 +31,11 @@
     if(!$db) die("Failed to connect to the DB!"); //if we don't have a DB conn, die
 
 
-    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(match INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, automoved INTEGER, kickstand BOOL, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER, endmoved INTEGER, time CURRENT_TIMESTAMP)");
+    $curQuery = pg_query("CREATE TABLE IF NOT EXISTS scouting(match INTEGER, team INTEGER, startingposition TEXT, autoshort INTEGER, automedium INTEGER, autolarge INTEGER, autocenter INTEGER, automoved INTEGER, kickstand BOOL, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endsmall INTEGER, endmedium INTEGER, endlarge INTEGER, endcenter INTEGER, endmoved INTEGER, time timestamp)");
 
     if(!$curQuery) die("Table check/create failed!"); //if query failed, die
 
-    $curQuery = pg_query("INSERT INTO scouting (match, team, startingposition, autoshort, automedium, autolarge, autocenter, automoved, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter, endmoved, time) VALUES (${match}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${automoved}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter}, ${endmoved}, CURRENT_TIMESTAMP)");
+    $curQuery = pg_query("INSERT INTO scouting (match, team, startingposition, autoshort, automedium, autolarge, autocenter, automoved, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter, endmoved, time) VALUES (${match}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${automoved}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter}, ${endmoved}, now())");
 	
     if(!$curQuery) die("Data insert failed!"); //if query failed, die
 
