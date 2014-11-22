@@ -1,5 +1,5 @@
 <?php
-
+    echo('PHP started.');
 
     $match = $_POST["match"];
         //$match= $_POST["match"];
