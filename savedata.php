@@ -35,7 +35,7 @@
 
     if(!$curQuery) die("Table check/create failed!"); //if query failed, die
 
-    $curQuery = pg_query("INSERT INTO scouting (match, team, startingposition, autoshort, automedium, autolarge, automoved, autocenter, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter, endmoved) VALUES (${match}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${automoved}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter}, ${endmoved})");
+    $curQuery = pg_query("INSERT INTO scouting (match, team, startingposition, autoshort, automedium, autolarge, autocenter, automoved, kickstand, teleshort, telemedium, telelarge, endsmall, endmedium, endlarge, endcenter, endmoved) VALUES (${match}, ${team}, '${startingposition}', ${autoshort}, ${automedium}, ${autolarge}, ${autocenter}, ${automoved}, ${kickstand}, ${teleshort}, ${telemedium}, ${telelarge}, ${endsmall}, ${endmedium}, ${endlarge}, ${endcenter}, ${endmoved})");
 	
     if(!$curQuery) die("Data insert failed!"); //if query failed, die
 
