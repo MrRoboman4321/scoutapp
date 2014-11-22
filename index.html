@@ -51,6 +51,7 @@ data.endmedium = 0;
 data.endlarge = 0;
 data.endcenter = 0;
 data.endmoved = 0;
+console.log("Data reset.");
 }
 
 pages = ["scoreAuto", "scoreTele", "scoreEnd", "preInput", "auto", "tele", "end", "extraAuto", "extraTele", "extraEnd", "moveAuto", "moveEnd"]
@@ -88,8 +89,8 @@ function setAutoPark() {
 }
 function saveData() {
     console.log(data.automoved);
-    $.post("savedata.php", data, function(data) { console.log("Swag done"); });
 	console.log(data);
+    $.post("savedata.php", data, function(data) { console.log("Swag done"); });
 }
 function disable(id) {
     document.getElementById(id).setAttribute('disabled', 'disabled');
