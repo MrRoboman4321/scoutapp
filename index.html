@@ -32,6 +32,7 @@ width:400px;
 }
 </style>
 <script>
+function resetData(){
 data = {};
 data.match = 0;
 data.team = 0;
@@ -50,6 +51,7 @@ data.endmedium = 0;
 data.endlarge = 0;
 data.endcenter = 0;
 data.endmoved = 0;
+}
 
 pages = ["scoreAuto", "scoreTele", "scoreEnd", "preInput", "auto", "tele", "end", "extraAuto", "extraTele", "extraEnd", "moveAuto", "moveEnd"]
 function changePage(id) {
