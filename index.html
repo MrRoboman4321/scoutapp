@@ -93,7 +93,7 @@ function saveData() {
     //$.post("savedata.php", data, function(data) { console.log("Swag done."); });
 	$.ajax({
 	    type: "POST",
-		url: 'savedata.php',
+		url: './savedata.php',
 		data: data,
 		success: function() { console.log("Success!"); },
 		});
