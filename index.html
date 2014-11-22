@@ -81,8 +81,11 @@ function saveData() {
     $.post("savedata.php", data, function(data) { console.log(data); });
 }
 function disable(id) {
-    document.getElementById(id).disabled = 'disabled';
+    document.getElementById(id).disabled = true;
 	console.log(id);
+}
+function enable(id) {
+  document.getElementById(id).disabled = false;
 }
 function setMatchTeamNo(matchId, teamId) {
     var e = document.getElementById(matchId);
@@ -180,7 +183,7 @@ function setMatchTeamNo(matchId, teamId) {
 <input type="button" value="Goal Score" onclick="changePage('scoreEnd');" style="width:472px; height:500px; float:left; font-size:20px;"><!--
 --><input type="button" value="Extra"  onclick="changePage('extraTele');" style="width:157px; height:60px; font-size:20px;"><!--
 --><input type="button" value="Finished" onclick="changePage('preInput');saveData();" style="width:200px; height:60px; float:top; font-size:20px;"><!--
---><input type="button" value="Move Goal" onclick="changePage('moveEnd');" style="width:472px; height:450px; float:right; font-size:20px;">
+--><input type="button" value="Move Goal" onclick="changePage('moveEnd');enable('kick');" style="width:472px; height:450px; float:right; font-size:20px;">
 </div>
 
 <div id="scoreAuto" style="display:none">
